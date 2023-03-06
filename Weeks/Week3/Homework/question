@@ -1,0 +1,27 @@
+Create a class named Pizza that stores information about a single pizza. It should contain the following:
+Private instance variables to store the size of the pizza (either small, medium, or large),
+the number of cheese toppings and the number of pepperoni toppings.
+NOTE: number of cheese toppings, pepperoni toppings cannot be a negative number.
+Constructor that sets all of the instance variables.
+Public methods to get and set the instance variables
+A public method named calcCost( ) that returns a double that is the cost of the pizza.
+Pizza cost is determined by:
+Small: $10 + $2 per topping
+Medium: $12 + $2 per topping
+Large: $14 + $2 per topping 
+A public method named getDescription() that returns a String containing the pizza size, quantity of each topping, and the pizza cost as calculated by calcCost()
+Appropriate toString and equals methods
+Write main method in a class called PizzaTest that asks for pizza size and number of toppings for each category.
+It should then initialize Pizza class (i.e. create an object of type Pizza) and invoke getDescription() method; NOTE: you may ask the user to input these values, or you may just invoke a constructor by entering the values yourself.
+In case you want to ask the user for input you may use the code or similar code as below:
+
+Scanner input = new Scanner(System.in);
+System.out.print("Enter the size of Pizza:");
+String size = input.nextLine();
+System.out.print("Enter the number of Cheese toppings:");
+int nOfCheTop = input.nextInt();
+System.out.print("Enter the number of Pepperoni toppings:");
+int nOfPepTop = input.nextInt();   
+
+Also test the toString and equals methods
+INCLUDE A PRINT SCREEN OF THE OUTPUT! 
