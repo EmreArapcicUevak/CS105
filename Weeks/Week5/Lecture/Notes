@@ -1,0 +1,56 @@
+Anonymous objects are objects that are made but NOT saved via a variable (it doesn't get assigned to a variable).
+We can assign objects in copy constructors to other object only if those objects are immutable.
+When making getters for private variables objects, make sure to send a copy of that object unless it is immutable.
+Key word for inhereting in Java is "extends" for examples:
+	- class HourlyEmployee extends employee
+
+To call the constructor of the inheritated class is to use "super()"
+
+Some terminology for classes and their inheritance is:
+Employee:
+	> Base
+	> SuperClass
+	> Parent
+	> Ancestor
+--------------------------------------------------------------------------------
+HourlyEployee:
+	> Derived
+	> SubClass
+	> Child
+	> Desendent
+
+
+We can over-write inherited methods by remaking them in the derived class!
+So if we want to, we can over-write the equals and toString  method
+
+All classes by default if they do not inherit from any other class they inherit from a class called Object.
+The UML for the class Object looks like:
+		------------------------------
+		| public String toString()   |
+		| public boolean equals()    |
+		| public ? getClass()	     |
+		|			     |
+		|		  	     |
+		------------------------------
+		|			     |
+		|	Object UML Design    |
+		|                            |
+		------------------------------
+
+Lets look at an over-write on the equals method:
+	public boolean equals(Object otherObject){
+		if (otherObject == null)
+			return false;
+		else if (getClass() != otherObject.getClass())
+			return false;
+		else {
+			otherEmp = (Employee)otherObject;
+			return name.equals(otherEmp.name) && hireDate.equals(otherEmp.hireDate);
+		}
+	}
+
+
+One way to use toString with inheritance is to use the inherited toString and concatonate it to our new class
+	public String toString() {
+		return String.format("%s \nWage Rate: %d\nHours:%d",super.toString(),this.wageRate,this.hours);
+	}
